@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8AF5CEA-21D3-472A-8654-4DE71DA0C6C4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BayesTurchinAnalysis</RootNamespace>
+    <AssemblyName>BayesTurchinAnalysis</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CreateWindow\BackGroundWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateWindow\BackGroundWindow.designer.cs">
+      <DependentUpon>BackGroundWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateWindow\BTCreateWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateWindow\BTCreateWindow.designer.cs">
+      <DependentUpon>BTCreateWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateWindow\LogWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateWindow\LogWindow.designer.cs">
+      <DependentUpon>LogWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateWindow\ModExperiment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateWindow\ModExperiment.Designer.cs">
+      <DependentUpon>ModExperiment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateWindow\SmoothCreateWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateWindow\SmoothCreateWindow.designer.cs">
+      <DependentUpon>SmoothCreateWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateWindow\SmoothTranslateWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateWindow\SmoothTranslateWindow.Designer.cs">
+      <DependentUpon>SmoothTranslateWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalProgram\BT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExternalProgram\Feff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graph\Alpha_EigenWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graph\DefGraphWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graph\DeleteGraphWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graph\DeleteGraphWindow.Designer.cs">
+      <DependentUpon>DeleteGraphWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graph\DifferenceGraphWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graph\DifferenceGraphWindow.Designer.cs">
+      <DependentUpon>DifferenceGraphWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graph\GraphWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graph\GraphWindow.Designer.cs">
+      <DependentUpon>GraphWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graph\MatrixGraphWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graph\RangeSetWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graph\RangeSetWindow.Designer.cs">
+      <DependentUpon>RangeSetWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graph\SelectXYDataWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graph\SelectXYDataWindow.designer.cs">
+      <DependentUpon>SelectXYDataWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graph\Sn2GraphWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\BTForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\BTForm.Designer.cs">
+      <DependentUpon>BTForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\Preference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\Preference.Designer.cs">
+      <DependentUpon>Preference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\Program.cs" />
+    <Compile Include="MainForm\Utility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreateWindow\BackGroundWindow.resx">
+      <DependentUpon>BackGroundWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateWindow\BTCreateWindow.resx">
+      <DependentUpon>BTCreateWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateWindow\LogWindow.resx">
+      <DependentUpon>LogWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateWindow\ModExperiment.resx">
+      <DependentUpon>ModExperiment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateWindow\SmoothCreateWindow.resx">
+      <DependentUpon>SmoothCreateWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateWindow\SmoothTranslateWindow.resx">
+      <DependentUpon>SmoothTranslateWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graph\Alpha_EigenWindow.resx">
+      <DependentUpon>Alpha_EigenWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graph\DefGraphWindow.resx">
+      <DependentUpon>DefGraphWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graph\DeleteGraphWindow.resx">
+      <DependentUpon>DeleteGraphWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graph\GraphWindow.resx">
+      <DependentUpon>GraphWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graph\MatrixGraphWindow.resx">
+      <DependentUpon>MatrixGraphWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graph\RangeSetWindow.resx">
+      <DependentUpon>RangeSetWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graph\SelectXYDataWindow.resx">
+      <DependentUpon>SelectXYDataWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\BTForm.resx">
+      <DependentUpon>BTForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Preference.resx">
+      <DependentUpon>Preference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Resource\smooth_exp.inp" />
+    <EmbeddedResource Include="Resource\smooth_thr.inp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RefTextControl\BTSubControl.csproj">
+      <Project>{C5F1B108-2D4F-4BD7-90F7-D110E15E170D}</Project>
+      <Name>BTSubControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\BTinp_orig.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\BTparams.csv" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

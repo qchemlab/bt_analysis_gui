@@ -1,0 +1,120 @@
+#BTinp.inp parameter names and parameter explanations  	
+[Line2] 	
+itermax  		,>=0: number of iteration steps \n = 0: noteration write"BTmu0","expxmu","BTerr" , "BTdat"\n =-1: no iteration , write "Btmu0" \n =-2: noiteration , write "BTmu0","expxmu" \n =-3: no iteration , write "BTmu0","expxmu","BTerr"
+mxpath			,number of half path length to be fitted out of maxpath a priori values read from "chi1m.dat" \n 0: all half path length are independent fit parameters x \n>0:maxpath half path length are x parameters \n<0: |mxpath| crystal parameter are fitted |mxpath| <= 3
+mxspath			,number of Debye-Waller parameters Sigma^2 to be fitted out of maxpath a priaori values read from "chi1m.dat" \n >0: maxpath Sigma^2 are fit parameters \n =0: all maxpath Sigma^2 are fit parameters or spring constants are fitted \n <0: |mxspath| Sigma^2 are fit parameters
+mc3path			,number of C3 parameter to be fitted
+kni				,coordination numbers to be fitted ( or numbers of equivalrent paths )
+ircorr			,option parameter to construct the singlescattering path\n=1:the scaling parameter for all paths lengths is determined by first path length \n=2: assume monolayer element A between top and bottom layer of element B \n=3:hcp crystal structure \n=4:three layers of element A with hcp crystal structure between top and bottom later of element B\n=6: fits of sigma \n=7: fits of coordination number\n=10:conpute paths lengths from relations given in "paths1"
+itrunc			,0:truncation error not used\n1:truncation error used
+inpex			,input option parameter for experimental data \n=1:input of mu_exp(E) and <mu_exp(E)> data from "muexp_av.dat" \n=-1input of chi(k) data from "expchi.dat" \n=0read "expxmu.dat" file
+minxq			,iteration ends for limit 10^minxq of summation after alpha optimizaton loop ( usually : -4 )
+malphopt		,>0:max iteration steps for alpha optimization using Turchin 2 method( usually : 3)\n<0:alpha optimization using Turchin 1 method
+n0bkg			,number of cubic spline points for background correction in fit region\n>=3:n0bkg spline points equally distributed in fit region are set with a priori amplitudes \n=1: spline points are read from file "BTbkg0.dat"
+ipbkg			,penalty value used in background correction is penalty = largest eigenvalue * 10^ipbkg (usually: 0)
+iamatc			,>0:first alpha-value for iteration \n<=0: start iteration with -imatc eigenvalues in R-space
+nord			,0: r dependence used for phase and scattering amplitudes \n1:no r dependence used
+ircfct			,-1:no correction terms used for half path length \n0: correction terms of cumulant expansion applied \n1:correction terms of cumulant expansion and perpendicular vibrations apllied
+iboot			,-1: boots trap procedure involving crystal parameters,Sigma^2(stat),spring constants,and spin-orbit energies(for L-edges)\n0: no boots trap procedure \n+1:boots trap procedure between Sigma^2(stat) and spring constants\n+2: boots trap procedure with Sigma^2(stat) spring constants
+lalph			,>=0:scaling factor is 0.1\n<0: when <lalph value,scaling factor is 0.5 (usually:0)   
+[Line3]		 	
+bkgw			,weight of background cubic spline points
+dels02			,weight of S0^2( usually : 0.0 , not fitted)
+dele0			,weight of E0 ( usually : 1.0 )
+delrp			,weight of half path lengths(usually : 0.02)
+delsp			,weight of DW parameters( usually : 0.001 )
+delc3			,weight of C3 parameters( usually : 0.0 , not fitted )
+deldg			,weight of path degeneracy parameters(usually : 0.0, not fitted)
+delstd			,>0: weight of structural disorder considering all atoms(usually : 0.002)\n<0:weight of structural disorder considering atoms with potential numbers 0&1 (usually : 0.002 )
+[Line4]		 	
+q_min			,min k value of fit region \n<0: smooth cut off \n>0: sharp cut off(usually : 3.0)
+errxla			,uncertainty of FEFF electron mean free path\n>0: absolute value \n<0: relative value in %(usually : 10%=-0.1)
+erramp			,uncertainty of FEFF amplitude \n>0: absolute value \n<0: relative value in %(usually : 7%=-0.07)
+errpha			,uncertainty of FEFF total phase\n>0: absolute value \n<0: relative value in %(usually : 0.7 Rad=0.7)
+errrad			,uncertainty of half path length for y parameters\n>0: absolute value \n<0: relative value in %(usually : 0.001 angstrom)
+errsig			,uncertainty of DW parameters using force-field model\n>0: absolute value \n<0: relative value in %(usually : 0.3%=-0.003)
+cstd			,a priori structural disorder
+S02				,a priori S0^2( usually : 0.9 )
+E0				,a priori E0 in eV
+[Line5]			
+experr			,>0: absolute and k independent value of experimental uncertainty \n<0: relative (%) and k dependent value of experimental uncertainty.
+
+erre1			,first energy value E1 of region with special uncertainty
+erre2			,last energy value E2 of region with special uncertainty
+erre12			,scaling factor of experimental uncertainty in energy region E1 <= E <= E2
+erre3			,first energy value E4 of region with special uncertainty
+erre4			,last energy value E5 of region with special uncertainty
+erre34			,scaling factor of experimental uncertainty in energy region E4 <= E <= E5
+errk1			,lower k value of window 1
+errk2			,upper k value of window 1
+errk12			,scaling factor
+errk3			,lower k value of window 2
+errk4			,upper k value of window 2
+errk34			,scaling factor
+errk5			,lower k value of window 3 (option)
+errk6			,upper k value of window 3(option)
+errk56			,scaling factor of experimental uncertainty(option)
+[Line6]		 	
+nfed			,recursion order of force-field model  (usually : 8) \n<=0: force-field model not used
+ifed			,option for spring constants of force-field model \n=0: read just this line\n=1: read an additional line for extra spring constants
+fedt			,sample temperature in Kelvin
+fedf1			,first spring constant in N/m (stretching mode)
+fedf2			,second spring constant in N/m (stretching mode)
+fedf3			,third spring constant in N/m (stretching mode)
+fedf4			,bending mode spring constant(when used, fedf3 and delfed3 are set to zero)
+delfed1			,weight of fed1
+delfed2			,weight of fed2
+delfed3			,weight of fed3
+delfed4			,weight of fed4
+debt			,Debye temperature in Kelvin to estimate the contribution of vibrations perpendicular to path length vector and/or to use correlated Debye model
+
+deldebt			,weight of Debye temperature in fit
+rsh1			,first shell radius of force-field model for deformed crystal  (usually : 0.0 )
+rsh2			,second shell radius of force-field model for deformed crystal (usually : 0.0 )
+rsh3			,third shell radius of force-field model for deformed crystal (usually : 0.0 )
+o2m				,max omega squared value of vibration spectrum(usually : about 4000)
+[Line6a]	 	
+fedf5			,if Zi != Zj and Rij <= rsh5 then Kapper = fedf5 (stretching mode)
+delfed5			,weight of fed5
+fedf6			,if Zi = Zj and Rij <= rsh6 then Kapper = fedf6 (stretching mode)
+delfed6			,weight of fed6
+fedf7			,if Zi != Zj and Rij <= rsh7 then Kapper = fedf7 (stretching mode)
+delfed7			,weight of fed7
+rsh5			,distance between atom i and atom j for fedf5
+rsh6			,distance between atom i and atom j for fedf6
+rsh7			,distance between atom i and atom j for fedf7
+[Line7]		 	
+mum				,1: for mu_exp with overlaying L1,L2,L3 edges\n0: otherwise
+ism				,>0: smooth FEFF-mu_0,L1 using 5-point box-smoothin ism times when read in subroutine "xmunom"(usually: 3)\n0:don't smooth mu_0,L1
+e0l1			,L1 edge (k=0 value) in eV
+e0l2			,L2 edge (k=0 value) in eV
+e0l3			,L3 edge (k=0 value) in eV
+osca			,amplitude of artificial disturbance in mu_0_L1, mu_0_L2, mu_0_L3
+oscr			,radius value of artificial disturbance in mu_0_L1, mu_0_L2, mu_0_L3
+oscs			,radius variance of artificial disturbance in mu_0_L1, mu_0_L2, mu_0_L3
+[Line8]		 	
+ifilt			,0: no   Fourier filter used\n1: use Fourier filter on chi_exp and chi_mod in each iteration step.
+qwin			,diffuseness of k window\n>0: Hanning window sill\n<0: Kaiser-Bessel window sill
+rwin			,diffuseness of r window\n>0: Hanning window sill\n<0: Kaiser-Bessel window sill
+qwin1			,begin of k window\n=0:qwin1 = qmin
+qwin2			,end of k window\n=0: qwin2 = qmax
+rwin1			,begin of r window\n=0:rwin1 = 0
+rwin2			,end of r window\n=0: qwin2 = 30
+nqfft			,multiply chi by k^nqfft  for Fourier transformation
+ftrm			,compare experiment and model in r-space region
+[Line9]
+npot			,>0: use potential number dependent path multiplicities\n=0: normal path multiplicities
+cpotx(i)		,multiplication factors of path multiplicities
+[Line10]
+lpx				,>0: modifiy initial lattice parameters\n=0:use initial lattice parameters read in "drda"
+dparlp0x(i)		,initial deviations of lattice parameters
+	 			
+[Line11]
+iwtf			,=0: for bulk or single layer (one absorption center)\n>0:for iwtf+1 absorption centers (iwtf<3)
+nwtf(i)			,lowest path number for (i+1)th absorption center
+mwtf			,max atom number in file ggeom1.dath of each absorption center
+wtfs(i)			,scattering amplitude weight factors of each absorption center
+				
+[Line12]
+mix				,<=0: don't use mix
+mixdir			,
